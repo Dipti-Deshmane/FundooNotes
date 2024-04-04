@@ -1,0 +1,77 @@
+
+
+.button-container {
+  display: flex;
+ 
+  position: absolute; /* Position the button container absolute */
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  padding: 5px;
+  border-radius: 100%;
+}
+
+.button-container button {
+background-color: transparent;
+border: none;
+cursor: pointer;
+margin: 0;
+margin-left: 5px;
+border-radius: 100%;
+height: 30px;
+
+}
+
+.button-container button:hover {
+  color: #000;
+  background-color: rgba(243, 227, 227, 0.5);
+
+
+}
+.button-container button svg {
+color: #555;
+}
+.pin-icon {
+  position: absolute; /* Changed to absolute for positioning relative to the note title */
+  top: 1; /* Align to the top of the note title */
+  right: 15px;
+color: #433c3c; /* Adjust color as needed */
+cursor: pointer;
+
+}
+
+
+.pin-icon svg {
+  color: #555;
+} 
+
+
+.tooltip {
+position: absolute;
+top: 0;
+right: 0;
+visibility: hidden;
+background-color: black; /* Default background color */
+color: white; /* Default text color */
+padding: 5px;
+border-radius: 6px;
+text-align: center;
+z-index: 1;
+transition: visibility 0s, opacity 0.5s, transform 0.5s; /* Add transition effect */
+opacity: 0; /* Hide tooltip initially */
+pointer-events: none; 
+}
+
+.tooltip-text {
+font-size: 12px;
+}
+
+.card-title-container:hover .tooltip {
+visibility: visible;
+}
+
+.button-container button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+

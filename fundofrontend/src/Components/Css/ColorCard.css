@@ -1,0 +1,45 @@
+
+.color-options {
+    display: inline-flex;
+    position: absolute;
+
+    z-index: 100;
+    margin-right: 50px;
+  }
+  
+  .ColorCard{
+    width: 220px; /* Adjust the width dynamically based on content */
+  
+    height: auto;
+    padding: 5px;
+    background-color: white;
+
+  }
+  
+  .ColorCardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px; /* Adjust the gap between color options */
+    align-items: center; /* Align items vertically center */
+    height: 30px;
+ 
+  }
+  
+  .color-option {
+    width: 23px;
+    height: 23px;
+    border: 1px solid gray;
+    cursor: pointer;
+    border-radius: 50%;
+    border-radius: 50%;
+    margin-bottom: 5px; 
+
+  }
+  
+  
+  .color-option:hover {
+  
+  border-color: black;
+  }
+  

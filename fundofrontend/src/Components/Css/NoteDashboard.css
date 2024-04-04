@@ -1,0 +1,682 @@
+.note-dashboard {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  justify-content: center;
+  align-items: center;
+}
+
+.note-list {
+  width: 100%;
+  padding: 20px;
+  max-width: 100%; /* Set maximum width to ensure content fits within screen */
+  box-sizing: border-box; /* Include padding and borders in the width */
+}
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: #000;
+}
+
+
+
+.header {
+display: flex;
+justify-content: space-between;
+top: 0;
+left: 0;
+width: 100%;
+position: fixed;
+padding: 10px;
+height: 40px;
+border-bottom: 1px solid #ccc;
+color: #000;
+background-color: white;
+z-index: 10;
+}
+
+.user-circle {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: purple;
+color: white;
+font-size: 19px;
+cursor: pointer;
+position: fixed;
+margin-left: 1250px;
+margin-top: 0;
+
+}
+
+
+
+
+/* Styles for user card */
+.user-card {
+position: absolute;
+top: 50px;
+right: 20px;
+width: 170px; /* Adjust the width as per your requirement */
+background-color: #ffffff;
+border: 1px solid #007bff;
+border-radius: 8px;
+padding: 10px;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for card effect */
+display: flex;
+flex-direction: column;
+z-index: 1000;
+margin-right: 60px;
+
+}
+
+.user-info {
+height: 30px;
+margin-bottom: 10px;
+margin-top: 0px;
+}
+
+.sign-out p {
+color: #007bff; /* Add color to the sign-out text */
+cursor: pointer; /* Change cursor to pointer on hover */
+
+
+}
+
+.sign-out p:hover {
+text-decoration: underline; /* Underline text on hover */
+}
+
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire circle without stretching */
+  border-radius: 50%;
+}
+
+/* Style for the "Add Profile Picture" button */
+.profile-button-container {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.profile-picture-label {
+  cursor: pointer;
+  color: #007bff; /* Change color as needed */
+}
+
+
+
+.logo {
+height: 40px; /* Adjust according to your logo height */
+margin-right: 5px; /* Adjust margin as needed */
+position: fixed;
+
+}
+.logo-container {
+display: flex;
+align-items: center;
+margin-left: 10px;
+}
+
+.logo-text {
+font-size: 20px; /* Adjust font size as needed */
+
+color: gray;
+position: fixed;
+margin-left: 40px;
+font-family:calibri;
+font-weight: 550rem;
+
+}
+
+.user {
+font-size: 20px; /* Adjust font size as needed */
+font-weight: bold;
+color: gray;
+
+}
+
+
+
+.main {
+  display: flex;
+  height: calc(100vh - 74px); /* Account for header height */
+}
+
+.sidebar {
+  flex: 0 0 200px; /* Set the width of the sidebar */
+  padding: 10px;
+  position: fixed;
+  margin-top: 80px;
+
+}
+.sidebar-options {
+  display: flex;
+  flex-direction: column;
+  color: #000;
+  list-style-type: none;
+  font-size: medium;
+  font-weight: 500;
+    }
+.sidebar-options > div {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+margin-bottom: 10px;
+width: 220px;
+}
+.sidebar-options div a {
+display: flex;
+align-items: center;
+text-decoration: none;
+color: black;
+border-top-right-radius: 25px;
+border-bottom-right-radius: 25px;
+height: 45px;
+width: 100%;
+}
+.sidebar-options div a:hover {
+background-color:#ccc;
+
+}
+.sidebar-options div.active a {
+background-color:#FFDAB9;
+border-top-right-radius: 25px;
+border-bottom-right-radius: 25px;
+height: 45px;
+width: 100%;
+}
+
+.option-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 30px;
+  margin-left: 20px;
+ 
+}
+
+.button-container {
+  display: flex;
+ 
+  position: absolute; /* Position the button container absolute */
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  padding: 5px;
+  border-radius: 100%;
+}
+
+.button-container button {
+background-color: transparent;
+border: none;
+cursor: pointer;
+margin: 0;
+margin-left: 5px;
+border-radius: 100%;
+height: 30px;
+
+}
+
+.button-container button:hover {
+  color: #000;
+  background-color: rgba(243, 227, 227, 0.5);
+
+
+}
+.button-container button svg {
+color: #555;
+}
+.pin-icon {
+  position: absolute; /* Changed to absolute for positioning relative to the note title */
+  top: 1; /* Align to the top of the note title */
+  right: 15px;
+color: #433c3c; /* Adjust color as needed */
+cursor: pointer;
+
+}
+
+
+.pin-icon svg {
+  color: #555;
+} 
+
+
+.tooltip {
+position: absolute;
+top: 0;
+right: 0;
+visibility: hidden;
+background-color: black; /* Default background color */
+color: white; /* Default text color */
+padding: 5px;
+border-radius: 6px;
+text-align: center;
+z-index: 1;
+transition: visibility 0s, opacity 0.5s, transform 0.5s; /* Add transition effect */
+opacity: 0; /* Hide tooltip initially */
+pointer-events: none; 
+}
+
+.tooltip-text {
+font-size: 12px;
+}
+
+.card-title-container:hover .tooltip {
+visibility: visible;
+}
+
+.button-container button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.note-title {
+width: calc(100% - 20px);
+border: none;
+font-weight: bold;
+font-size: 16px;
+margin-bottom: 5px;
+  position: absolute;
+
+}
+
+.note-description {
+
+border: none;
+resize: none;
+overflow: hidden;
+
+}
+
+.note-card {
+width: 260px;
+min-height: 100px;
+
+/* background-color: #fff; */
+border-radius: 8px;
+margin-bottom: 20px;
+margin-right: 100px;
+margin-left: 20px;
+position: relative;
+flex: 0 0 auto;
+}
+
+.layout-toggle{
+  margin-top: 33px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #555;
+}
+
+.note-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+ /* background-color: 	#FFDAB9 ; */
+  height: calc(100% - 40px); 
+  margin-bottom: 35px;
+}
+
+.card{
+  
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f4eded;  
+  position: relative; /* Position the card relative for absolute positioning of buttons */
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+}
+
+.card-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: none;
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.card-text {
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: none;
+  flex-grow: 1;
+  overflow: auto; /* Allow scrolling for overflow */
+  min-height: 50px;
+}
+
+.add-note {
+background-color: #fff;
+box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+margin: 80px 450px 20px 230px;
+transition: box-shadow 0.30s ease;
+box-shadow: 1px 1px 1px 1.5px rgba(0, 0, 0, 0.3);
+width: 520px;
+}
+
+.add-note:hover {
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.add-note input[type="text"],
+.add-note textarea {
+width: 95%;
+padding: 8px;
+margin-bottom: 20px;
+border: none;
+border-bottom: 1px solid #ccc;
+font-size: 16px;
+outline: none;
+font-family:sans-serif;
+
+}
+
+.add-note textarea {
+min-height: 100px;
+resize: none;
+}
+
+.add-button {
+background-color: #5f6368;
+color: white;
+padding: 8px 16px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+background-color: #4d5054;
+}
+
+.add-note-icon {
+width: 24px;
+height: 24px;
+cursor: pointer;
+transition: transform 0.3s ease;
+}
+
+.add-note-icon:hover {
+transform: rotate(45deg);
+}
+
+.take-note {
+color: #5f6368;
+cursor: pointer;
+font-size:medium;
+font-family: calibri;
+padding: 8px;
+height: 25px;
+border: #000;
+font-weight: 500;
+border-radius: 8px;
+text-align: left;
+transition: background-color 0.3s ease;
+
+width: 500px;
+
+}
+
+.take-note:hover {
+background-color: #f1f3f4;
+}
+
+.add-note-icon {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  bottom: 60px;
+  right: 90px;
+  cursor: pointer;
+  z-index: 1000; 
+}
+
+.archived-card-text {
+  margin-bottom: 10px;
+}
+
+.archived-notes .trashed-notes {
+  margin-left: 20px;
+}
+
+.search-container {
+display: flex; 
+margin-right: 200px;
+margin-top: -30px;
+align-items: center; 
+
+}
+
+
+.search-input {
+padding: 8px;
+border: 1px solid #f5ecec;
+background-color:#F5F5F5;
+border-radius: 4px;
+font-size: small;
+font-weight: 500;
+outline: none;
+width: 650px;
+height: 30px;
+margin-top: 30px;
+
+box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+margin-left: 230px;
+}
+.notes-container {
+  
+  flex-wrap: wrap; /* Allows notes to wrap to the next row */
+  align-items: flex-start; /* Align items from the start of the cross axis (top) */
+  justify-content: flex-start; 
+  margin-bottom: 10px;
+  margin-left: 260px;
+
+  width: calc(100vw - 260px); 
+  height: calc(100vh - 74px);
+}
+
+.pinned-header {
+  margin-top: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.unpinned-header {
+  margin-top: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.pinned-notes-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.unpinned-notes-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.header-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.reminder-tab{
+  border-radius: 50px;
+  background-color: rgba(158, 146, 146, 0.2);
+  height: 30px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  font-size: small;
+}
+.reminder-tab button {
+  border: none;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.reminder-tab button:hover {
+  background-color: #e9ecef93;
+  color: black;
+}
+
+.reminder-tab:hover {
+  background-color: #ccc;
+}
+
+.ReminderCard {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 2px 4px rgba(1, 1, 1, 0.1);
+  padding: 16px;
+  position: absolute;
+  z-index: 10000;
+  font-size: small;
+  width: 260px;
+}
+
+.reminder-title {
+  font-size: medium;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.reminder-inputs {
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+  font-weight: 500;
+}
+
+.reminder-input-group {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: small;
+}
+
+.reminder-input {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: small;
+  text-transform:uppercase;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  .header{
+    width: 100%;
+  }
+  .search-container {
+    width: 98%; 
+    margin-left: 0px; /* Remove left margin for search input */
+  }
+
+  .user-circle {
+    margin-left: 850px; /* Move the user circle to the right on smaller screens */
+    margin-right: 10px; /* Add some right margin for spacing */
+  }
+
+  .layout-toggle{
+    margin-right: 20px;
+  }
+
+  .setting{
+    margin-right: 120px;
+  }
+
+.sidebar-options > div {
+    width: 200px;
+}
+
+
+.take-note {
+  margin-right: 250px;
+}
+
+.notes-container {
+  margin-top: 20px;
+  margin-left: 230px;
+  width: 500px
+
+
+}
+
+.add-note {
+      margin: 80 100 20 80;
+      padding: 0;
+      width: 420px;
+      }
+
+  .pinned-notes-container {
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .unpinned-notes-container {
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .note-card {
+    flex-direction: row; /* Align note cards row-wise */
+    margin-bottom: 10px; /* Add gap between rows */
+    width: 100px /* Adjust width for two cards per row with a gap of 10px */
+  }
+  
+.header-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card-text {
+
+  min-height:40px;
+}
+}
+.trash-icon {
+  position: absolute;
+  top: 22px;
+  left: 23px;
+  width: 1px;
+  height: 1px;
+  background: #fff;
+  cursor: pointer;
+  padding: 0px;
+}

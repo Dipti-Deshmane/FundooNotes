@@ -1,0 +1,98 @@
+.signup-container { 
+	background-color: rgba(0, 0, 0, 0.5); 
+	margin: auto ; 
+	padding: 40px; 
+	border-radius: 5px; 
+	box-shadow: 0 0 10px #000; 
+	position: absolute; 
+	top: 0; 
+	bottom: 0; 
+	left: 0;
+	right: 0; 
+	width: 400px;
+	height: 530px; 
+	} 
+	
+	/* div { 
+	text-align: center; 
+	} */
+
+.signupform-box 
+{ 
+	background-color: rgba(0, 0, 0, 0.5); 
+	margin: auto ; 
+	padding: 40px; 
+	border-radius: 5px;
+	box-shadow: 0 0 10px #000; 
+	position: absolute; 
+	top: 0; 
+	bottom: 0; 
+	left: 0; 
+	right: 0; 
+	width: 400px;
+	height: 530px; 
+} 
+.signupform-box:before
+ {
+	 background-image: url("https://i.postimg.cc/8cnYLpfc/ddddd.jpg"); 
+	 width: 100%; 
+	 height: 100%;
+	 background-size: cover; 
+	 content: "";
+	 position: fixed; 
+	 left: 0; 
+	 right: 0; 
+	 top: 0; 
+	 bottom: 0; 
+	 z-index: -1; 
+	 display: block; 
+	 filter: blur(2px); 
+	} 
+.signupform-box .header-text { 
+	font-size: 32px; 
+	font-weight: 600; 
+	color: white; 
+	padding-bottom: 10px; 
+	text-align: center; 
+	margin-Top: -15px; 
+}
+
+.inputSignup { 
+	width: 350px; 
+	padding: 10px; 
+	height: 20px; 
+	margin-left: 5px; 
+	margin-bottom: 40px; 
+	border: none; 
+	border-radius: 5px; 
+}
+
+.signupbutton { 
+	background-color: deepskyblue; 
+	color: #fff; 
+	border: none; 
+	border-radius: 5px; 
+	cursor: pointer; 
+	width: 92%; 
+	font-size: 18px; 
+	padding: 10px; 
+	margin: 20px 0px; 
+	margin-bottom: 40px; 
+}
+
+.signupbutton:hover { 
+	background-color: #0056b3; 
+}
+
+
+.Toastify__toast-container {
+    position: fixed;
+    z-index: 9999;
+    top: 20px;
+    right: 20px;
+	width: 350px;
+	font-size: '16px';
+	font-family: 'Arial, sans-serif';
+
+}
+
